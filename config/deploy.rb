@@ -1,7 +1,7 @@
 # Change these
 server '146.101.100.144', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:olegprin/cinema3502.git'
+set :repo_url,        'git@github.com:olegprin/cinema3502.git'
 set :application,     'cinema3502'
 set :user,            'deploy1'
 set :puma_threads,    [4, 16]
