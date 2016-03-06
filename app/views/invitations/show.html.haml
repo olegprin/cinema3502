@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @invitation.user
+%p
+  %b Text:
+  = @invitation.text
+%p
+  %b Email:
+  = @invitation.email
+%p
+  %b Name:
+  = @invitation.name
+%p
+  %b Token:
+  = @invitation.token
+
+= link_to 'Edit', edit_invitation_path(@invitation)
+\|
+= link_to 'Back', invitations_path

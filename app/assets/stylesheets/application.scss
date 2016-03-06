@@ -1,0 +1,77 @@
+/*
+ *= require jquery-ui
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "comments";
+
+.registration {
+	 color: black;
+}
+.text_description {
+	color: white;
+}
+.text {
+
+	color: black;
+}
+
+/*-------------------------------------------------
+MODAL
+-------------------------------------------------*/
+div .modal-body{
+	 color: black;
+}
+
+div .modal-content {width:600px;padding:auto;}
+
+
+/*-------------------------------------------------
+CONTACT FORM CLASSS
+-------------------------------------------------*/
+
+.contact-form { padding:30px;float:left; width:550px; overflow:hidden; border-bottom:1px solid #dadacb;}
+.contact-form label {display: block; padding:10px 0 10px 0;}
+.contact-form label span {display: block; color:#939191;font-size:14px; float:left; width:80px; text-align:left; padding:5px 20px 0 0;}
+.contact-form .input_text {padding:10px 10px;width:420px;background:#e5e2d3;border:none; color:#939191;}
+.contact-form .message{padding:10px 10px;width:420px; background:#e5e2d3; border:none;overflow:hidden;height:150px; color:#939191; font-size:14px;}
+.contact-form .button{padding:8px;background:#cf9359; color:#f7f7f7; text-transform:uppercase;font-family: 'Ropa Sans', sans-serif; border:0px solid;margin-left:100px;margin-top:20px;}
+
+.address { padding:30px; float:left; width:520px;}
+.address .panel { border-bottom:none; color:#9b9e9a; background:none; float:left; margin-bottom:30px; padding:0px; width:260px;}
+.address .panel .title h1 {  color:#282623; padding-bottom:10px;}
+.address .panel .content p{border-bottom:none; overflow:hidden; padding-bottom:0px;}
+.address .panel .content p span { color:#9b9e9a;}
+.address .panel .content p a{color:#cf9359; text-decoration:none;}
+.address .panel .content p a:hover{color:#282623;}
+
+div .error_class {color: red; size: 50px;}
+
+div .pagination {margin-left:20px;margin-top:0px;}
+#task-form {margin-left:50px;margin-top:0px;}
+
+div .form-group {color: black}
+div .list-group-item a {width:150px;}
+
+div .insert_text {color: black;}
+
+div .posting {color: black;}
+
+div .modal-body {width: 500px;}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+
+div.right {margin-right: 50px;}
+div .comments {font-size: 18px;}

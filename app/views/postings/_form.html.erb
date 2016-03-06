@@ -1,0 +1,42 @@
+<div class='posting'>
+  <%= form_for([blog,posting], :html => { :multipart => true }, remote: request.xhr?, html: { data: { modal: true } }  ) do |f| %>
+
+    <%= errors_for(@posting) %>
+
+    <!-- FIELDS ===================================== -->
+    <%= f.hidden_field(:user_id, value: current_user.id) if current_user -%>
+    
+
+    <div class="field_text">
+      <%= f.label :title %>
+    </div>  
+     <div class="field_body"> 
+      <%= f.text_field :title, :size => 62 %>
+    </div>
+
+    <div class="field_text">
+      <%= f.label :body %>
+    </div>  
+     <div class="field_body">
+      <%= f.text_area :body, :rows => 10, :cols => 60 %>
+    </div>
+
+    <div class="field_text">
+      <%= f.label :is_draft, t(:save_as_draft) %>
+
+      <%= f.check_box :is_draft %> <%= t(:will_be_shown_to_authors_only)%>
+    </div>
+      
+    <div class='top_right_box'>
+      <div class="field">
+  <%= f.label :cover_picture %>
+        <%= f.file_field :cover_picture %>
+      </div>
+  
+
+   <div class="field_body">
+   
+      <%= f.submit :class => "button save" %>
+    </div>
+  <% end %>
+</div>

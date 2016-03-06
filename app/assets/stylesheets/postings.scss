@@ -1,0 +1,19 @@
+// Place all the styles related to the Postings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "blogs";
+
+.field {
+ color:white; 
+}
+.actions {
+ color:white; 
+}
+div .posting_body{padding-left: 45px;}
+
+ div .insert_button{padding-left: 45px;padding-bottom:10px;}
+
+ div .field_text {color:white; }
+
+ div .field_body {color:body; }

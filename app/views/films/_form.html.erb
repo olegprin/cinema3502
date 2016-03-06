@@ -1,0 +1,57 @@
+
+
+<div class="text_for_film">
+<%= bootstrap_form_for(@film, layout: :vertical, label_col: "col-sm-2", control_col: "col-sm-50", multipart: true) do |f| %>
+ 
+
+ <%#= errors_for(@film)%>
+
+
+
+  
+    <%= f.text_field :title,  label: "#{t('forms.buttons.title')}", placeholder: "title",:size => 160  %>
+  
+
+
+
+
+      <%= f.text_field :year, label: "#{t('forms.buttons.year')}", placeholder: "year", :size => 160 %>
+
+
+
+     <%= f.text_field :actor, label: "#{t('forms.buttons.actor')}", placeholder: "actor" %>
+
+
+
+
+      <%= f.text_field :language,  label: "#{t('forms.buttons.language')}", placeholder: "language" %>
+
+
+
+       <%= f.text_field :subtitle, label: "#{t('forms.buttons.subtitle')}", placeholder: "subtitle" %>
+
+       <%#= render partial: "upload"%>
+
+      <%= f.text_area :description,label: 'Minimum 400', id: "description", placeholder: "description" %>
+          
+<span id="description_counter"></span>
+
+
+      <%= f.file_field :uploaded_file, label: "#{t('forms.buttons.picture')}", placeholder: "picture" %>
+
+     <%= f.file_field :down_file, label: "#{t('forms.buttons.torent')}", placeholder: "torent" %>
+
+      <%= f.collection_select :category, Film::CATEGORY, :to_s, :titleize,  label: "#{t('forms.buttons.category')}", placeholder: "category" %>
+
+      
+       <div class="send_new_film">
+        <%= f.check_box :send_new_film, label: "#{t('forms.buttons.send_new_film')}" %> 
+      
+    
+        
+            
+            <%= f.button t('forms.buttons.submit'), data: {disable_with: "<i class='fa fa-refresh fa-spin'></i> Creating..."}  %>
+            </div>
+           
+<% end %>
+</div>

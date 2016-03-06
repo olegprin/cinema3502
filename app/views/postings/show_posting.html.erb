@@ -1,0 +1,3 @@
+<%=@posting.title%>
+<%= render :partial => '/postings/cover_picture',:locals => { :posting => @posting} %>
+<%=insert_text(@posting.body, 10000)%>

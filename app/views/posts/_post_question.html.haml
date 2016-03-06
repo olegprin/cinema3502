@@ -1,0 +1,6 @@
+=f.label :questions, 'questions'
+=f.text_area :question
+=f.check_box :_destroy
+=f.label :_destroy, 'Remove Question'
+=f.fields_for :answers do |f|
+  =render "answer", f: f

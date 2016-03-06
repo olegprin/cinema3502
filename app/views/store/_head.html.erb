@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-9">  
+    <div class="header">
+      <div id="site_title"><a href="index.html"><img src="/assets/shop/logo.png" alt=""></a></div>
+      <!-- Main Menu -->
+      <ol id="menu">
+        <li class="active_menu_item"><a href="index.html">Home</a>
+          <!-- sub menu -->
+          <ol>
+            <li><a href="#">Nivo Slider</a></li>
+            <li><a href="#">EI Slider</a></li>
+            <li><a href="#">Fullscreen Slider</a></li>
+            <li><a href="#">Static Image</a></li>
+          </ol>
+        </li>
+        <!-- END sub menu -->
+        <li><a href="#">Pages</a>
+          <!-- sub menu -->
+          <ol>
+            <li><a href="#">Magazine</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Full Width Page</a></li>
+            <li><a href="#">Columns</a></li>
+
+          </ol>
+
+        </li>
+        <!-- END sub menu -->
+        <li><a href="elements.html">Elements</a></li>
+        <li><a href="#">Galleries</a>
+          <!-- sub menu -->
+          <ol>
+            <li><a href="#">Simple</a></li>
+            <li><a href="#">Filterable</a></li>
+            <li><a href="#">Fade Scroll</a></li>
+            <li><a href="#">Video</a></li>
+            <li class="last"><a href="#">PhotoGrid</a></li>
+          </ol>
+        </li>
+        <!-- END sub menu -->
+        <li><%= link_to "Contact", store_contact_path %></li> 
+      </ol>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="col-md-1">
+    <div class="count_in_like"><%= link_to store_showlike_path, data: { modal: true }, class: "like" do %>
+      <button type="button" class="btn btn-info" aria-label="Left Align">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
+        </span>
+      </button>
+      <%= count_of_product %>
+      <% end %>
+    </div>
+  </div>
+  <%# end %>
+  <div class="col-md-1">
+    <div class="count_in_cart"><%= render "store/count_in_cart" %>
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>   
+</div>

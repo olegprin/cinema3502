@@ -1,0 +1,30 @@
+<%= form_for @messagestoadministrator, html: {class: 'contact-form margin-top'} do |f| %>
+  <label> 
+    <span>Name</span>
+      <%= f.text_field :name, {size: "40"}%>
+    </label>
+  </label>
+  <label> 
+    <span>
+      Email
+    </span>
+    <%= f.text_field :email, {size: "40"}%>
+  </label>
+  <label> 
+    <span>
+      Subject
+    </span>
+    <%= f.text_field :telephone, {size: "40"}%>
+  </label>
+  <label> 
+    <span>
+      Message
+    </span>
+    
+      <%= f.text_area :message, size: "39x5"%>
+  
+  </label>
+  <class="button">
+    <%= f.submit 'Save' %>
+  </label>
+<%end%>

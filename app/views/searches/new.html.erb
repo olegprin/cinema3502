@@ -1,0 +1,31 @@
+<div class="text">
+<%= bootstrap_form_for(@search, url: search_film_searches_path, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-8") do |f| %>
+
+
+   
+    <%= f.text_field :title, placeholder: "Title"%>
+
+   
+    <%= f.text_field :year, placeholder: "Year" %>
+ 
+
+
+   
+    <%= f.text_field :actor, placeholder: "Actor" %>
+
+
+    
+    <%= f.text_field :language, placeholder: "Language"  %>
+
+    <%= f.text_field :subtitle, placeholder: "Subtitle" %>
+
+
+    <%= f.select :category,  options_for_select(@categories), :include_blank => true %>
+
+
+
+
+    <%= f.submit %>
+
+<% end %>
+</div>

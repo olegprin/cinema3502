@@ -1,0 +1,19 @@
+%h1= link_to blog.title, blog
+- if blog.is_draft
+    %p= t(:is_draft_label)
+  
+
+
+- if can_manage(Blog,current_user.blog)
+  = ui_button 'edit',  t(:edit), edit_blog_path(blog)
+  = ui_button 'destroy', t(:destroy), blog,:confirm => t(:are_you_sure),:method => :delete
+
+
+  = t(:comments_allowed, :yes_or_no => blog.allow_comments ? t(:allowed) : t(:forbidden) )
+        %br
+  = t(:public_comments_allowed, :yes_or_no => blog.allow_public_comments ? t(:allowed) : t(:forbidden) )
+        %br
+  = t(:num_comments, :count => blog.postings.count)
+=current_blog.cover_picture
+  
+

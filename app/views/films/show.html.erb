@@ -1,0 +1,65 @@
+
+<body>
+  <div id="main">
+
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="gallery">
+          <div class="images">
+           <%= image_tag @film.uploaded_file.url(:preview) %>
+            <div class="link_all"> 
+              <%= ui_button 'back',  t(:back), :back%> 
+              <%= ui_button 'download',  t(:download), download_film_path(@film) %>    
+              <%if user_signed_in?%>  
+                <%if can_manage(current_user.films, @film, Film)%>
+                  <%= ui_button 'edit',  t(:edit), edit_film_path(@film)%>
+                 <%= ui_button 'delete',  t(:destroy), film_path(@film), method: :delete%>
+                <%end%>
+              <%end%>
+            </div>
+          </div>
+        </div>
+
+      <div id="content">
+        <h1><%= @film.title.capitalize%></h1>
+        <p> <%= render partial: "show", locals: {film: @film} %> </p>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+
+
+
+
+  <%= render partial: "comments/comment_form"%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

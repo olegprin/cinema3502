@@ -1,0 +1,10 @@
+like it!!!
+<%#= url_for(:host => "http://localhost:3000/",
+:controller => "registrations",
+:action => "sign_in") %>
+<%= @user.token %>
+
+
+<%= link_to "sign_in", url_for(:host => "http://localhost:3000/",
+:controller => "invitations",
+:action => "search_token", :id=>@user.token, :port=>'3000'  ) %>

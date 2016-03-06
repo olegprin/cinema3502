@@ -1,0 +1,15 @@
+%h1 Listing questions
+
+
+- @questions.each do |question|
+  %dt=question.question
+  = link_to 'Edit', edit_post_question_path(@post,question)
+  = link_to 'Destroy', post_question_path(@post,question), :method => :delete, :data => { :confirm => 'Are you sure?' }
+  = link_to 'Add answer', new_question_answer_path(question)
+  %dt
+    -question.answers.each do |answer|
+      %dt= answer.answer
+      =link_to "answer new", new_question_answer_path(question)
+      =link_to "answer edit", edit_question_answer_path(question, answer)
+      = link_to 'Destroy', question_answer_path(question, answer), :method => :delete, :data => { :confirm => 'Are you sure?' }
+= link_to 'New Question', new_post_question_path(@post)

@@ -1,0 +1,8 @@
+<h1> Search result </h1>
+<%search_film%>
+<% if @films.nil? %>
+	<p> No Record Found </p>
+<% else %>
+	<%=render partial: "home/all_film"%>
+<% end %>
+

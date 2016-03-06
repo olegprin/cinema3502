@@ -1,0 +1,66 @@
+<body>
+
+<!--- panel wrap div end -->
+<div class="page-wrap">
+  <div class="page-wrapper">
+    <div class="primary-content marRight30">
+      <div class="mid-panel">
+        <div class="mid-panel-content">
+          <div class="title">
+            <h1>contact</h1>
+          </div>
+          <div class="border"></div>
+          <h2>Subheading goes here</h2>
+          
+          <%= render partial: "messagestoadministrators/form"%>
+
+          <div class="clearing"></div>
+     
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="sidebar">
+
+
+
+      <div class="search-panel">
+        <div class="content">
+          <div class="border"></div>
+          <h2>Search the site here...</h2>
+          <div class="searchbox">
+
+             <%= form_tag(search_products_path, method: "get") do %>
+      
+      <%= text_field_tag :search, params[:search] %>
+   
+      <%= submit_tag "search"%>
+
+      <% end %>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <%#=render "blogs/side_bar"%>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
+</div>
+<!--- page wrap div end -->
+<div class="">
+  <p>Copyright (c) websitename. All rights reserved. </p>
+</div>
+</body>
+</html>

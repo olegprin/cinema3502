@@ -1,0 +1,121 @@
+<%=link_to "google", user_omniauth_authorize_path(:google_oauth2)%>
+<%=link_to "olesa", user_omniauth_authorize_path(:facebook)%>
+
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<% title('All films') %>
+<meta charset="utf-8">
+
+
+
+
+
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+  <div class="light-bg">
+    <!-- shell -->
+    <div class="shell">
+      <!-- header -->
+    <%= render "home/head"%>
+      <!-- end of header -->
+      <!-- main -->
+      <div class="main">
+        <!-- content -->
+        <section class="content">
+          
+          <% @films.each do |film| %>
+     
+            <div class="post">
+              <!-- post-inner -->
+              <div class="post-inner">
+                <header>
+                  <h2><a> <%= link_to "#{film.title}", film_path(film) %></a></h2>
+                  <p class="tags"><a href="#">FAMILY</a> <a href="#">COMEDY</a> <a href="#">ANIMATION</a> </p>
+                  <div class="cl">&nbsp;</div>
+                </header>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="img-holder"> <%= link_to image_tag(film.uploaded_file.url(:preview)), film_path(film)  %>
+                  </div>
+              
+                  <div class="meta">
+                    <p class="date"><%= film.created_at %> 
+                      <a><%= link_to info_from_email(film), info_path(info_by_email(film)) %>
+                      </a> 
+                      <a><%= link_to "Download", film_path(film) %>
+                      </a> 
+                          <% if signed_in? %>
+                            <% if  can_manage(current_user.films, film, Film) %>
+                              <%= link_to  t('activerecord.attributes.edit'), edit_film_path(film) %>
+                              <%= link_to t('activerecord.attributes.delete'), film, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            <% end %>
+                          <% end %>
+                           
+
+                      </a>
+                    </p>
+
+                    <div class="right">
+                      <div class="rating-holder">
+                        <%=render partial: "voices/like_dislike", locals: {resourse_number: film, name_controller: Film} %>
+                      </div>
+                      <div class="comments"><%= link_to "#{film.comments.count} comments", film_path(film) %> 
+                      </div>
+                    </div>
+
+                    <div class="cl">
+                      &nbsp;
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div class="text_description">
+                    <%= insert_text(film.description,490)%>
+                  </div>
+                  <%= ui_button 'read', t(:show),show_modal_film_path(film), data: { modal: true } %>
+                </div>
+              </div>
+            
+          </div>
+          </div>
+          <% end %>
+          <div class="pagination">
+            <ul>
+      
+              <li class="active">
+                <a>
+                  <%unless Array.present?%>
+                    <%= render_pagination_box(@films) %> 
+                  <%end%>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- end of content -->
+        <!-- sidebar -->
+       <%= render "home/down"%>
+        <!-- end of sidebar -->
+        <div class="cl">&nbsp;</div>
+      </div>
+      <!-- end of main -->
+    
+    </div>
+    <!-- end of shell -->
+  </div>
+</div>
+<!-- end of wrapper -->
+</body>
+</html>
+
+
+
+

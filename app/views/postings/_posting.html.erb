@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-4">
+    <div class="insert_button"> 
+      <%= ui_button 'read', t(:show),show_posting_posting_path(posting), data: { modal: true } %>       
+      <% if current_user.present?%>
+        <% if can_manage(current_user.postings,posting, Posting)%>
+        <%= ui_button 'edit', t(:edit), edit_posting_path(posting), data: { modal: true }%>
+        <%= ui_button 'destroy', "delete", posting_path(posting), method: :delete%>
+        <%end%>
+      <%end%>
+    </div>
+
+    <div class="posting_body">   
+   <%= link_to(image_tag(posting.cover_picture.url(:preview)), show_posting_posting_path(posting), data: { modal: true })
+      %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="posting_body">   
+    <p>
+    <%= insert_text(posting.title)%>
+    <%= insert_text(posting.body.capitalize)%>
+    </p>   
+    </div>
+  </div>  
+</div> 
+
+
+  
+
+  <%= render partial: "comments/comment_form"%>
+  

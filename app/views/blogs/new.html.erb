@@ -1,0 +1,8 @@
+#add to layout
+
+<%#= render "header"%>
+<% title t(:new_blog) %>
+
+<%= render :partial => 'form', :locals => {:blog => @blog} %>
+
+<%= link_button t(:blog_index), "button back small", blogs_path %>

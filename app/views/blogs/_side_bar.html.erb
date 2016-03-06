@@ -1,0 +1,62 @@
+<div class="sidebar">
+  <div class="search-panel">
+    <div class="content">
+      <div class="title">
+        <h1>Lorem ipsum dolo</h1>
+      </div>
+      <div class="border"></div>
+      <h2>Search the site here...</h2>
+      <div class="searchbox">
+        <%= form_tag(search_products_path, method: "get") do %>
+          <%= text_field_tag :search, params[:search] %>
+
+          <%= submit_tag "search"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="midpanel">
+    <div class="content marginBottom">
+ 
+        <h1>POSTING</h1>
+
+      <div class="border"></div>
+      <ul>
+        <%@posting_of_blog.each do |blog| %>
+          <li>
+            <%=link_to truncate("#{blog.body}",length: 27), posting_path(blog.id) %>
+          </li>
+        <%end%>
+      </ul>
+    </div> 
+  </div> 
+  <div class="midpanel">
+        <div class="content">
+          <div class="title">
+            <h1>Morbi id dolor vel</h1>
+          </div>
+          <%@info_blog.each do |info|%>
+            <div class="border">
+            </div>
+            <div class="container">
+             
+            
+            <div class="row">
+               <div class="col-md-5">
+              <h2><%=info.name.capitalize%></h2>
+              
+              </div>
+                 <div class="col-md-5">
+
+              <%= link_to(image_tag(info.photo.url(:small)), info_path(info))%>
+               </div>
+            </div>
+
+            <p>Imperdiet nisl ut congue purus adipiscing eget magna donec tristuque.</p>  
+             
+            </div> 
+          <%end%>  
+        </div>
+      </div>
+
+    </div>

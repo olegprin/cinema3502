@@ -1,0 +1,76 @@
+<body>
+
+  <%= @postings.present? %>
+  <%= render "header"%>
+    <%= ui_button 'back', t(:blog_index), blogs_path%>
+    <%if user_signed_in?%>
+    <%= ui_button('add', t(:create_new_posting), new_blog_posting_path(@blog), :add_class =>'green', data: { modal: true }) %>
+      <% if can_manage_has_one(current_user.blog, @blog, Blog) %>
+        <%= ui_button('edit', t(:edit_blog), edit_blog_path(@blog), data: { modal: true } ) %>
+      <%end%>
+    <%end%>
+<!--- panel wrap div end -->
+  <div class="page-wrap">
+    <div class="page-wrapper">
+      <div class="primary-content marRight30">
+        <div class="mid-panel">
+          <div class="panel">
+            <%=@blog.title%>
+            <%= render :partial => '/blogs/cover_picture',:locals => { :blog => @blog} %>
+            <div class="content_blog">
+              <%=insert_text(@blog.synopsis, 330)%>
+              <%= link_to 'Show blog', show_blog_blog_path(@blog), 
+            data: { modal: true } %>
+            </div> 
+            <% if @postings.present? %>
+              <% @postings.each do |posting|%>
+                <div class="title">
+                  <h2>
+                    <div class="edit_posting">
+                    <%=posting.user.email%>
+                    <%if user_signed_in?%>
+                    <% if can_manage( current_user.postings, posting, Posting) %>
+                    
+                      <%= ui_button('edit', t(:edit_posting),edit_posting_path(posting),data: { modal: true } ) %>
+                      <%= ui_button('destroy', t(:destroy_posting),posting_path(posting),  method: :delete) %>
+                    <%end%>
+                    <%end%>
+                    <%= ui_button('read', t(:show_posting),posting_path(posting), :add_class =>'green' ) %>
+                  </div>
+                  </h2>
+                </div>
+               
+                  <div class="row">
+                  <div class="posting">
+                    <%=posting.title%>
+                    <div class="col-md-7">
+
+                   <%=link_to(image_tag(posting.cover_picture.url(:thumb)), posting_path(posting))%>
+                    
+                    </div>
+                
+                    <div class="col-md-5">
+                    <%=markdown(truncate(posting.body, length: 250))%>
+                    </div>
+                  </div>
+                  </div>
+                
+              <%end%> 
+              <%else%>
+              <div class="empty_posting">
+              </div> 
+            <%end%> 
+            
+
+            <div class="clearing">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <%=render "side_bar"%>
+      </div>
+    </div>
+  </div>
+</body>
+

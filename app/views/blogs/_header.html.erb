@@ -1,0 +1,75 @@
+<div class="header">
+  <div class="header-left-panel">
+    <div class="logo-wrap">
+      <div class="logo">
+        <h2><%=Configurable['slogan']%></h2>
+        <h1><%=Configurable['name']%></h1>
+      </div>
+    </div>
+  </div>
+  <div class="header-right-panel">
+    <div class="header-right-panel-top">
+      <p>
+        Call Us : 000 888 8888
+      </p>
+      <p><%=link_to "Mail Us : 
+        #{Configurable['admin_notification_address']}" %>
+      </p>
+    </div>
+    <div class="menu">
+      <ul>
+        <li class="marRight20"> 
+          <div class="<%=@blog_show%>">
+            <% if user_signed_in?%>
+              <%if current_user.blog.present?%>
+                <%=link_to "My blog",blog_path(current_blog)%>
+              <%else%>
+                <%=link_to "Create blog",new_blog_path %>
+              <%end%>
+            <%else%>
+              <%= link_to "My blog", new_user_session_path  
+              %>
+            <%end%>
+          </div> 
+        </li>
+
+
+        <li class="marRight20"> 
+          <div class="<%=@new %>">
+          
+          <% if user_signed_in?%>
+            <%if current_user.blog.present?%>
+
+              <%=link_to "New posting",new_blog_posting_path(current_blog) %> 
+            <%else%>  
+              <%=link_to "New posting",new_blog_path, 
+            data: { modal: true } %>
+            <%end%>
+
+          <%else%>
+        
+            <%= link_to "Create blog", home_blogs_path
+              %>
+            
+          <%end%>
+         </div> </li>
+
+      <li class="marRight20"> 
+          <% if user_signed_in?%>
+          <div class="<%=@about %>">
+          <%=link_to "My info",info_path(current_user)%></div> </li>
+          <%else%>
+           <div class="<%=@new %>">
+            <%= link_to "My info", new_user_registration_path
+              %></div> </li>
+          <%end%>
+
+
+        <li class="marRight20">
+          <div class="<%=@services %>"><%=link_to "ALL BLOGS",blogs_path%></div></li>
+        <li class="marRight20"><div class="<%=@features %>"><%=link_to "Features",features_blogs_path%></div></li>
+       <li class="marRight20"><div class="<%=@contact %>"><%=link_to "Contact",contact_blogs_path%></div></li>
+      </ul>
+    </div>
+  </div>
+</div>

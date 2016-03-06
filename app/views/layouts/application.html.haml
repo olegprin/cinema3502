@@ -1,0 +1,14 @@
+%DOCTYPE
+%html
+  %head
+  = render partial: "shared/down"
+  = render partial: "shared/navbar" 
+%div{:id=>"modal-holder"}
+
+
+
+%title
+  = yield(:title)
+
+
+= yield

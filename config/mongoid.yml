@@ -1,0 +1,31 @@
+development:
+  sessions:
+    default:
+      database: testapp_development
+      hosts:
+        - localhost:27017
+      options:
+        # safe: false
+        # consistency: :eventual
+        # max_retries: 30
+        # retry_interval: 1
+  # options:
+  #   identity_map_enabled: true
+
+test:
+  sessions:
+    default:
+      database: testapp_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        max_retries: 1
+        retry_interval: 0
+
+development:
+  sessions:
+    default:
+      database: testapp_production
+      hosts:
+        - localhost:27017

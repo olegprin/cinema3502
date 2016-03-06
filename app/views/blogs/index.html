@@ -1,0 +1,149 @@
+<body>
+  <%= render "header"%>
+<div class="row">
+  <% @blog_redy.each do |blog| %>
+  
+    <div class="col-md-4">
+      <div class="panel-wrap">
+        <div class="panel-wrapper">
+          <div class="panel marRight">
+            <div class="img_blog">
+                <%= render :partial => '/blogs/cover_picture',:locals => { :blog => blog}    %>
+            </div>
+            <div class="title">
+              <h1><%=blog.title%></h1>
+            </div>
+            <div class="border">
+            </div>
+            <div class="content">
+              <%=insert_text(blog.synopsis, 160)%>
+              <div class="button-link">
+                <a><%=link_to "readmore", blog_path(blog)%>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>  
+</div>  
+
+ <%if @blogs.total_pages > 1%>
+    <%= will_paginate @blogs%>
+    <%end%>
+
+<div class="clearing"></div>
+<div class="page-wrap">
+  <div class="top-content">
+    <h1>Aliquam arcu arcu aliquam eu</h1>
+    <div class="top-border"></div>
+    <p>Integer varius, erat nec rhoncus tincidunt, quam ante sodales quam, eu iaculis lacus urna nec mauris. Pelle ntesque rhoncus tincidunt libero, eu fermentum tellus placerat vitae. Integer condimentum ante eget turpis pharetra malesuada. Donec non magna a risus tristique semper hasellus placerat consequat congue. Proin metus libero, consectetur ac tincidunt at, gravida molestie sem. </p>
+    <div class="bottom-border"></div>
+    <div class="button-link"><a href="#">readmore</a></div>
+  </div>
+
+
+  <div class="page-wrapper">
+    <div class="primary-content marRight30 ">
+      <div class="toppanel">
+        <div class="container">
+          <h1>Quisque venenatis libero et orci auctor.
+          </h1>
+          <div class="border-bottom">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="container-panel padBottom">
+                <div class="container-panel-left marRight20"><img src="/assets/blog/icon-1.png">
+                </div>
+                <div class="container-panel-right">
+                  <h3>subheading</h3>
+                  <p>Morbi id dolor vel turpis consectetur fringilla. Donec dui turpis, faucibus in blandit quis, aliquet id risus.</p>
+                </div>
+              </div>
+              <div class="container-panel borderNone marginTop">
+                <div class="container-panel-left marRight20"><img src="/assets/blog/icon-3.png"></div>
+                <div class="container-panel-right">
+                  <h3>subheading</h3>
+                  <p>Nulla euismod pretium volutpat. Nullam quis mi eros, sit amet eleifend ante. Ut semper, dolor.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+       
+              <div class="container-panel-left marRight20"><img src="/assets/blog/icon-2.png">
+              </div>
+              <div class="container-panel-right">
+                <h3>subheading</h3>
+                <p>Pellentesque lacinia blandit iaculis. Nulla feugiat sodales sem, non mollis urna elementum blandit.</p>
+              </div>
+        
+
+        
+              <div class="containerborderNone">
+                <div class="container-panel-left">  <img src="/assets/blog/icon-4.png">
+                </div>
+                <div class="container-panel-right">
+                  <h3>subheading</h3>
+                  <p>Vivamus eu velit turpis. Donec co<br />
+                    nsectetur turpis ac quam facilisis adipiscing. Maecenas.</p>
+                </div>
+              </div>
+            </div>    
+          </div> 
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="mid-panel marginTop">
+        <div class="mid-panel-content">
+          <div class="title">
+            <h1>Aliquam arcu arcu aliquam eu</h1>
+          </div>
+          <div class="border"></div>
+          <h2>Subheading goes here</h2>
+          <p>Phasellus non arcu id nisi ullamcorper varius. In quis vehicula enim. Maecenas gravida metus vitae tortor cursus sed mattis velit congue. Cras id nisi massa, sed feugiat est. Cras venenatis lacus vitae nisl tincidunt varius. Nunc dictum dapibus neque</p>
+          <div class="img marRight20"> <img src="/assets/blog/img-4.jpg"/> </div>
+          <div class="img marRight20"> <img src="/assets/blog/img-5.jpg"/> </div>
+          <div class="img"> <img src="/assets/blog/img-6.jpg"/> </div>
+        </div>
+      </div>
+      <div class="mid-panel marginTop">
+        <div class="mid-panel-content ">
+          <div class="title">
+            <h1>Aliquam arcu arcu aliquam eu</h1>
+          </div>
+          <div class="border"></div>
+          <h2>Subheading goes here</h2>
+          <p>Nulla hendrerit imperdiet lacus vitae luctus. Donec nec tempus metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus placerat aliquam. Mauris congue, orci nec feugiat varius, nisi felis porttitor magna, id egestas orci enim eget dui. Fusce quis leo mi.</p>
+          <p class="padBottom">Cras venenatis lacus vitae nisl tincidunt varius. Nunc dictum dapibus neque</p>
+        </div>
+      </div>
+    </div>
+
+    
+      <%=render partial:"side_bar"%>
+      
+    
+
+
+
+  </div>
+</div>
+</div>
+
+
+</body>
+
+
+
+
+

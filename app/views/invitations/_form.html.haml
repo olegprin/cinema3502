@@ -1,0 +1,16 @@
+= form_for @invitation do |f|
+  = errors_for(@invitation)
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .field
+    = f.label :text
+    = f.text_field :text
+
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,18 @@
+      <div class="header">
+        <!-- socials -->
+        <div class="socials"> <a href="#" class="facebook-ico">facebook-ico</a> <a href="#" class="twitter-ico">twitter-ico</a> <a href="#" class="you-tube-ico">you-tube-ico</a> </div>
+        <!-- end of socials -->
+        <h1 id="logo"><a href="#">Moviereviews</a></h1>
+        <!-- navigation -->
+        <nav id="navigation">
+          <ul>
+            <li><a><%=link_to "SHOW ALL", films_path%></a></li>
+            
+            <li><%= link_to 'LATEST ', latest_films_path%></li>
+            <li><%= link_to 'TOP RATED ', top_rated_films_path%></li>
+            <li><a><%= link_to 'ADD FILM', new_film_path%></a></li>
+          </ul>
+        </nav>
+        <!-- end of navigation -->
+        <div class="cl">&nbsp;</div>
+      </div>

@@ -1,0 +1,47 @@
+%div{:class=>"table-bordered_all"}
+
+  %table{:class=>"table table-bordered"}
+    %thead
+      %tr
+        %th
+          %div{:class=>"description_film"}
+            Description: 
+        %th
+          = insert_text(film.description)
+    %thead
+      %tr  
+        %th
+          Year:    
+        %th
+          =film.year
+    %thead
+      %tr
+        %th
+          Actor:     
+        %th
+          =film.actor.capitalize
+    %thead
+      %tr
+        %th
+          Language:
+        %th 
+          =film.language.capitalize  
+    %thead
+      %tr
+        %th
+          Subtitles:
+        %th  
+          =film.subtitle 
+    %thead
+      %tr
+        %th 
+          Author:
+        %th
+          =link_to "#{@user.email}", info_path("#{@info.id}")      
+      
+
+ 
+
+
+
+

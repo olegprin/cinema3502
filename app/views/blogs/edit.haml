@@ -1,0 +1,8 @@
+- title t(:editing_blog)
+
+
+= render :partial => 'form', :locals => {:blog => @blog}
+
+
+%p= ui_button 'read', t(:read_blog),  @blog
+%p= ui_button 'back', t(:blog_index), blogs_path

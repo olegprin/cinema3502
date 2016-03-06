@@ -1,0 +1,24 @@
+<%= form_for(@actor) do |f| %>
+    <%= errors_for(@actor) %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+ <div class="field">
+            <%= f.label :uploaded_photo, "Download image for film" %>
+            <%= f.file_field :uploaded_photo %> 
+                 </div>
+
+
+ 
+
+
+  <div class="actions">
+     <%= f.button "Create", class: "btn btn-primary", data: {disable_with: "<i class='fa fa-refresh fa-spin'></i> Creating..."} %>
+  </div>
+<% end %>

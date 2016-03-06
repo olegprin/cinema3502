@@ -1,0 +1,32 @@
+%div{:class=>"rows"}
+  %div{:class=>"col-md-2"}
+  %div{:class=>"col-md-6"}
+    = simple_form_for @product do |f|
+      %div{:class=>"error_class"}
+        - if errors_for(@product)
+          =errors_for(@product)
+          =@product.description.length
+
+      .title
+        = f.label :title
+        %b
+          = f.text_field :title,size: 51
+      .description
+        = f.label :description
+        %b
+          = f.text_area :description, id: "description", rows: 6,cols: 50
+      %span{:id=>"description_counter"}
+      .price
+        = f.label :price
+        %b
+          = f.text_field :price
+      .category 
+        = f.label :category
+        %b 
+          =f.collection_select :category, Product::CATEGORY, :to_s, :titleize,  label: "category", placeholder: "Title"
+      .uploaded_file
+        = f.label :uploaded_file, "Download image"
+        %b
+          = f.file_field :uploaded_file           
+      .actions
+        = f.submit 'Save'

@@ -1,0 +1,7 @@
+<%if @user.films.present?%>
+  <%=@user.films.each do |film|%>
+	<%=film.title%>
+  <%end%>
+<%else%>
+  "User didn't create any film"
+<%end%> 

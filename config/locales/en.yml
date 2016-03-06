@@ -1,0 +1,51 @@
+en:
+  blog_index: "Все блоки"
+  new_blog: "Новый блок"
+  activerecord:
+    attributes:
+      show: "Показать"
+      edit: "Редактировать"
+      delete: "Удалить"
+      title: "Название"
+      back: "Назад"
+      published_at: "Напечатано"
+      by: " "
+  forms:
+    messages:
+      success: "Операция была успешно выполнена!"
+    buttons: 
+      submit: "Creating..."
+      send_new_film: "Send comments to email"
+      category: "Category" 
+      torent: "Torrent" 
+      picture: "Загрузить картину"
+      description: "Описание"
+      subtitle: "Субтитры"
+      language: "Язык"
+      actor: "Актеры"
+      year: "Год выпуска"
+      title: "Название"
+      submit: "Отправить"
+      create: "Создать"
+      creating: "Создание"
+  menu:
+    languages:
+      lang: "Язык"
+      ru: "Русский"
+      en: "Английский"
+      advanced_search: "Детальный поиск"
+      create_film: "Создать фильм"
+      all_films: "All film"
+      search: "Поиск"
+      show_information: "Информация"
+      add_information: "Добавить информация"
+      sign_out: "Выйти"
+      add_information : "Добавить информацию"
+  films:
+    index:
+      list: "Список фильмов"
+      show: "Показать"
+    new:
+      back: "Назад"
+    form:
+      title: "название"

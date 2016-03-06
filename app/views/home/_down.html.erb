@@ -1,0 +1,37 @@
+<aside class="sidebar">
+  <div class="widget">
+    <h3 class="widgettitle">Genres</h3>
+    <ul>
+      <li><a><%=link_to "Action", action_films_path%></a></li>
+      <li><a><%=link_to "Comedy", comedy_films_path%></a></li>
+      <li><a><%=link_to "Documental", documental_films_path%></a></li>
+      <li><a><%=link_to "History", history_films_path%></a></li>
+      <li><a><%=link_to "Horror", horror_films_path%></a></li>
+      <li><a><%=link_to "Mystery", other_films_path%></a></li>
+      <li><a><%=link_to "War", other_films_path%></a></li>
+      <li><a><%=link_to "Western", other_films_path%></a></li>
+      <li><a><%=link_to "Adventure", other_films_path%></a></li>
+      <li><a><%=link_to "Crime", other_films_path%></a></li>
+      <li><a><%=link_to "Fantasy", other_films_path%></a></li>
+      <li><a><%=link_to "Thriller", other_films_path%></a></li>
+    </ul>
+  </div>
+  <div class="widget">
+
+
+
+    <h3 class="widgettitle">Opening This Week
+    </h3>
+    <ul>
+    <% last_film.each do |last_film| %>
+      <li>
+        <a href="#"><%= last_film.title %> 
+          <strong><%= time_ago_in_words(last_film.created_at)%>
+          </strong>
+        </a>
+      </li>
+    <% end %>
+
+    </ul>
+  </div>
+</aside>

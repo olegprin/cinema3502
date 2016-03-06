@@ -1,0 +1,23 @@
+
+
+= ui_button 'back', t(:blog_index), blogs_path
+-if user_signed_in?
+  = ui_button('add', t(:create_new_posting), new_blog_posting_path(@blog), :add_class =>'green' ) 
+
+%div
+
+
+  .left_column
+    = render :partial => 'blogs/blog', :locals => { :blog => @blog}
+    
+    - render_pagination_box @postings
+    
+    #postings{ style: 'clear: right;'}
+      -unless @postings.nil?
+        - @postings.each do |posting|
+          = render :partial => 'postings/posting', :locals => { :posting => posting, :blog => @blog }
+
+    - render_pagination_box @postings
+    
+    .clear
+  .clear

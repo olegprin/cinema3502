@@ -1,0 +1,32 @@
+%p#notice= notice
+%div{:class=>"row"}
+  -if @product.present?  
+    %div{:class=>"col-md-6"}     
+      %p{:class=>"tovar"}
+        = @product.title.capitalize
+   
+      %p
+        =  image_tag(@product.uploaded_file.url, size: "400x300")
+    
+                
+      =render partial: "voices/like_dislike", locals: {resourse_number: @product, name_controller: Product} 
+                             
+
+      %p{:class=>"price"}
+        = @product.price
+
+    %div{:class=>"col-md-6"}     
+      %p
+        %b Description:
+        = insert_text(@product.description, 450)
+        %p{:class=>"buy_product"}
+          = button_to 'Buy Now', line_items_path(product_id: @product.id), 
+              remote: true      
+        = render partial: "products/modal_of_description"
+
+  -else
+    "internet magazin doesnt have any product"
+  
+-if can?(:edit, Product)
+  = ui_button 'edit',  t(:edit), edit_product_path(@product), data: { modal: true }     
+= ui_button 'back',  t(:back), products_path

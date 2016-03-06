@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @folder.name
+%p
+  %b Parent:
+  = @folder.parent_id
+%p
+  %b User:
+  = @folder.user_id
+
+= link_to 'Edit', edit_folder_path(@folder)
+
+-if @current_folder
+  = link_to "New Folder", new_sub_folder_path(@current_folder)  
+-else
+  = link_to "New Folder", new_folder_path
+
+= link_to 'Back', folders_path

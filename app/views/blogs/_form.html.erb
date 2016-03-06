@@ -1,0 +1,56 @@
+<div class="row">
+<div class="col-md-2">
+</div>
+
+  <div class="col-md-4">
+<div class="blog_text">
+<%= simple_form_for(@blog, :html => { :multipart => true }) do |f| %>
+  
+
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :size => 60 %>
+  </div>
+
+  
+
+
+  
+  
+  <div class="field">
+    <%= f.label :synopsis %>
+    <%= f.text_area :synopsis, id: "description", :rows => 10, :cols => 59 %>
+    <span id="description_counter"></span>
+
+  </div>
+  
+
+  
+  <div class='field'>
+    <%= f.label :is_draft, t(:save_as_draft) %>
+    <%= f.check_box :is_draft %> <%= t(:will_be_shown_to_authors_only)%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :allow_comments %>
+    <%= f.check_box :allow_comments %><%= t(:allow_comments) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :allow_public_comments %>
+    <%= f.check_box :allow_public_comments %><%= t(:allow_public_comments) %>
+  </div>
+
+  <div class="field">
+
+    <%= f.input :cover_picture %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>
+</div>

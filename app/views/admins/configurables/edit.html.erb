@@ -1,0 +1,7 @@
+<%=@configurable.id%>
+
+<%= form_for @configurable, :url => admin_configurable_path(@configurable),:html => { :method => "PATCH"}  do |f| %>
+<dt><%= f.text_field :name %></dt>
+<dt><%= f.text_field :value %></dt>
+<dt><%= f.button %></dt>
+<% end %>

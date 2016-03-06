@@ -1,0 +1,4 @@
+<% if blog.cover_picture %>
+      <%= link_to(image_tag(blog.cover_picture.url(:preview)), blog_path(blog))
+      %>
+<% end %>

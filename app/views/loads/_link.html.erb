@@ -1,0 +1,11 @@
+<div id="menu"> 
+       <ul id= "top_menu">     
+           <% if @current_folder %> 
+    <li><%= link_to "New Folder55", new_sub_folder_path(@current_folder) %></li> 
+<li><%= link_to "Upload", new_load_path %></li> 
+<% else %> 
+    <li><%= link_to "New Folder", new_folder_path %></li> 
+    <li><%= link_to "Upload", new_load_path %></li> 
+<% end %>
+       </ul> 
+    </div> 
