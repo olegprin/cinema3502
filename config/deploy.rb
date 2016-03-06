@@ -1,7 +1,7 @@
 # Change these
-server '46.101.100.144', port: 22, roles: [:web, :app, :db], primary: true
+server '146.101.100.144', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:olegprin/cinema3502.git'
+set :repo_url,        'git@example.com:olegprin/cinema3502.git'
 set :application,     'cinema3502'
 set :user,            'deploy1'
 set :puma_threads,    [4, 16]
@@ -21,7 +21,7 @@ set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
-set :puma_init_active_record, false  # Change to true if using ActiveRecord
+set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
 # set :scm,           :git
@@ -82,4 +82,3 @@ end
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
 # kill -s SIGTERM pid   # Stop puma
-

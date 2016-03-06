@@ -58,6 +58,8 @@ group :development do
     gem 'capistrano3-puma',   require: false
 end
 
+gem 'puma'
+
 
 # Add this if you're using rbenv
 # gem 'capistrano-rbenv', github: "capistrano/rbenv"

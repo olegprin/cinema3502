@@ -377,6 +377,7 @@ DEPENDENCIES
   paperclip (~> 4.3)
   prawn
   prawn-table
+  puma
   rails (= 4.2.3)
   rails-i18n (~> 4.0.0)
   rails_multisite
